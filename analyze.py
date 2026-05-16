@@ -19,13 +19,7 @@ def load_results(file_path):
 def main():
     # Define all result files (chronological order)
     result_files = [
-        "results/exp1_full_glm_20260310_225426/results.jsonl",  # Questions 1481-1533 (latest)
-        "results/exp1_full_glm_20260310_010117/results.jsonl",  # Questions 1256-1391
-        "results/exp1_full_glm_20260309_181712/results.jsonl",  # Questions 1214-1255
-        "results/exp1_full_glm_20260309_103019/results.jsonl",  # Questions 1192-1213
-        "results/exp1_full_glm_20260308_165510/results.jsonl",  # Questions 898-1191
-        "results/exp1_full_glm_20260308_000848/results.jsonl",  # Questions 450-897
-        "results/exp1_full_glm_20260307_002100/results.jsonl",  # Questions 0-451
+        "results/exp1_full_glm/results.jsonl", 
     ]
     
     # Load all results
