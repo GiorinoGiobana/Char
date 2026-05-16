@@ -1,22 +1,22 @@
-# Char4 - Database Repair and Text-to-SQL Evaluation System
+# Char - Query-Contingent Database State Adjustment
 
 ## Project Overview
 
-This project is an intelligent database repair and Text-to-SQL evaluation system based on LangGraph. It can automatically repair databases and generate correct SQL queries when the database has issues such as missing tables, missing columns, or corrupted data.
+This project is an intelligent database adjustment and Text-to-SQL evaluation system based on LangGraph. It can automatically adjust databases and generate correct SQL queries when the database has issues such as missing tables, missing columns, or corrupted data.
 
 ## Core Features
 
 ### Four Workflow Types
 - **CASE_1_MISSING_TABLE**: Missing Table - Use recovery.json to restore table structure and data
-- **CASE_2_NORMAL**: Normal Case - Database is intact, generate SQL query directly
+- **CASE_2_NORMAL**: Intact Case - Database is intact, generate SQL query directly
 - **CASE_3_CORRUPTED_DATA**: Corrupted Data - Repair corrupted data
 - **CASE_4_MISSING_COLUMN**: Missing Column - Restore missing columns and their data
 
 ## Evaluation Metrics
 
-### Database Repair Success Rate (eval_is_match)
-- Save the gold SQL result of the original database as a baseline before repair
-- Execute gold SQL again after repair
+### Query-State Match Rate (eval_is_match)
+- Save the gold SQL result of the original database as a baseline before  adjustment
+- Execute gold SQL again after adjustment
 - Compare if the two results are consistent
 
 ### Text-to-SQL Accuracy (eval_final_is_match)
