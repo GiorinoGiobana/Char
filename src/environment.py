@@ -3,6 +3,7 @@ import os
 import shutil
 import sqlite3
 import re
+import json
 from typing import Tuple, Dict, Any, Optional, List
 from .tools import run_sqlite_query, write_json_file, get_db_schema
 

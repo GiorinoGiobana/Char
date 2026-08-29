@@ -1,4 +1,4 @@
-# Char4 - Database Repair and Text-to-SQL Evaluation System
+# Char - Database Repair and Text-to-SQL Evaluation System
 
 ## Project Overview
 
@@ -33,3 +33,18 @@ This project is an intelligent database repair and Text-to-SQL evaluation system
 ## License
 
 MIT
+
+## Paper-aligned workflow
+
+`src/statesculptor/workflow.py` is the only StateSculptor workflow. It exposes clue construction, test-data perturbation, ordered adjustment, UPDATE risk control, and final querying through `run_workflow` and `construct_test_data`.
+
+The `experiments/` directory keeps the paper's original independent experimental implementations and complete prompt templates:
+
+- `experiments/baselines/`: Query-only with clue and monolithic repair/query baselines.
+- `experiments/prompting/`: zero-shot, one-shot, and few-shot prompts and runners.
+- `experiments/ablation/`: probe/query ablations that toggle stages of the single workflow.
+- `experiments/backbones/`: GLM, Qwen, Qwen-Coder, and DeepSeek runners.
+
+Baseline implementations retain their distinct experimental constraints; database primitives and the main StateSculptor workflow are not duplicated.
+
+Run it with `python scripts/run_workflow.py --question "..." --db path/to/current.sqlite --attachment path/to/attachment.json`.
