@@ -1,15 +1,15 @@
 """
-Prompt engineering experiment templates.
-Provide zero-shot, one-shot, and few-shot modes for four agents.
+Prompt Engineering Experiment - Prompt Templates
+Provide zero-shot, one-shot, few-shot prompt modes for four agents (Router, Case1, Case3, Case4, Case2)
 
 Design principles:
-1. One-shot uses one high-quality example matching realistic complexity.
-2. Few-shot uses two examples from different scenarios.
-3. Examples strictly follow the required output format.
-4. Examples demonstrate payload_columns, partial-column inserts, and multi-row updates.
+1. One-Shot uses 1 high-quality example matching real-world complexity
+2. Few-Shot uses 2 examples from different scenarios, demonstrating diversity
+3. Examples must strictly follow the format requirements in instructions
+4. Examples should demonstrate key details: payload_columns usage, partial column insertion, multi-row updates, etc.
 """
 
-# ==================== ZERO-SHOT PROMPTS ====================
+# ==================== ZERO-SHOT Prompts ====================
 
 ZERO_SHOT_ROUTER_PROMPT = """You are an elite **SQL Resilience Architect** specialized in querying SQLite databases under adverse conditions.
 Your task is to analyze the user's SQL query execution on a potentially corrupted database.
@@ -165,7 +165,7 @@ If you need to execute SQL, output the SQL inside ```sql ... ``` block.
 """
 
 
-# ==================== ONE-SHOT PROMPTS (REDESIGNED) ====================
+# ==================== ONE-SHOT Prompts (redesigned) ====================
 
 ONE_SHOT_ROUTER_PROMPT = """You are an elite **SQL Resilience Architect** specialized in querying SQLite databases under adverse conditions.
 Your task is to analyze the user's SQL query execution on a potentially corrupted database.
@@ -445,7 +445,7 @@ If you need to execute SQL, output the SQL inside ```sql ... ``` block.
 """
 
 
-# ==================== FEW-SHOT PROMPTS (REDESIGNED, TWO EXAMPLES) ====================
+# ==================== FEW-SHOT Prompts (redesigned, 2 high-quality examples) ====================
 
 FEW_SHOT_ROUTER_PROMPT = """You are an elite **SQL Resilience Architect** specialized in querying SQLite databases under adverse conditions.
 Your task is to analyze the user's SQL query execution on a potentially corrupted database.
@@ -843,18 +843,18 @@ If you need to execute SQL, output the SQL inside ```sql ... ``` block.
 """
 
 
-# ==================== PROMPT RETRIEVAL ====================
+# ==================== Prompt Retrieval Function ====================
 
 def get_prompt_template(mode: str, case: str) -> str:
     """
-    Get the prompt template for a specified mode and case.
+    Get prompt template for specified mode and case
     
     Args:
         mode: "zero_shot", "one_shot", or "few_shot"
         case: "router", "case1", "case2", "case3", "case4"
     
     Returns:
-        The corresponding prompt template string.
+        Corresponding prompt template string
     """
     templates = {
         "zero_shot": {

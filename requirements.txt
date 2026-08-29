@@ -1,2 +1,6 @@
 openai
 numpy
+langchain-openai
+langchain-core
+langgraph
+python-dotenv

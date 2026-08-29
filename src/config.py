@@ -32,7 +32,9 @@ def get_llm(provider=None):
             model=model_name,
             temperature=0.95,
             api_key=api_key,
-            base_url=base_url
+            base_url=base_url,
+            timeout=float(os.getenv("LLM_TIMEOUT_SECONDS", "120")),
+            max_retries=1,
         )
     elif provider == "glm4.7":
         # GLM-4.7 configuration
@@ -164,10 +166,10 @@ def get_llm(provider=None):
             base_url=base_url
         )
     elif provider == "qwen3-coder-chatanywhere":
-        # Qwen3-Coder-480B via ChatAnywhere API (using specified Key)
+        # Qwen3-Coder-480B via ChatAnywhere API (using the configured key)
         api_key = os.getenv("CHATANYWHERE_API_KEY", "")
-        base_url = "https://api.chatanywhere.tech/v1"
-        model_name = "qwen3-coder-480b-a35b-instruct"
+        base_url = os.getenv("CHATANYWHERE_BASE_URL", "https://api.chatanywhere.tech/v1")
+        model_name = os.getenv("QWEN3_CODER_480B_MODEL_NAME", "qwen3-coder-480b-a35b-instruct")
 
         return ChatOpenAI(
             model=model_name,
