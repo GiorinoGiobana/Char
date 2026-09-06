@@ -1,5 +1,5 @@
 
-# Char - Query-Contingent Database State Adjustment
+# StateSculptor - Query-Contingent Database State Adjustment
 
 
 ## Project Overview
